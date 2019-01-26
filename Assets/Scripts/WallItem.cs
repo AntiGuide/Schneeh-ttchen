@@ -8,7 +8,7 @@ public class WallItem : MonoBehaviour, IInteractable {
 
     public bool itemPresent = true;
 
-    public void Interact(PlayerInventory playerInventory) {
+    public void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
         if (playerInventory.playerHolds != Item && playerInventory.playerHolds != null) {
             return;
         }

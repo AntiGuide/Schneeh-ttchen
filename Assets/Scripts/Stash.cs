@@ -7,7 +7,7 @@ public class Stash : MonoBehaviour, IInteractable {
 
     private int stashCount;
 
-    public void Interact(PlayerInventory playerInventory) {
+    public void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
         if (playerInventory.RemoveItem(stashType)) {
             stashCount++;
         } else if (stashCount > 0) {
