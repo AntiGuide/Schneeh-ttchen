@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHunger : MonoBehaviour {
@@ -27,10 +28,18 @@ public class PlayerHunger : MonoBehaviour {
         aktHunger -= Time.deltaTime * hungerSpeed;
 
         hungerImage.fillAmount = aktHunger / maxHunger;
+
+        if (aktHunger < float.Epsilon) {
+            Death();
+        }
 	}
 
     public void EatFood()
     {
         aktHunger += foodValue;
+    }
+
+    public static void Death() {
+        SceneManager.LoadScene(0);
     }
 }

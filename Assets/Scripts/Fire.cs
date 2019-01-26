@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Fire : MonoBehaviour {
+public class Fire : MonoBehaviour, IInteractable {
     [SerializeField]
     private float fireFadeModifierPerHole;
 
@@ -81,13 +81,13 @@ public class Fire : MonoBehaviour {
         }
     }
 
-    public void AddWood(ref PlayerInventory playerInventory)
-    {
-        playerInventory.RemoveItem(PlayerInventory.Items.WOOD);
+    public void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
+        if (!playerInventory.RemoveItem(PlayerInventory.Items.WOOD)) {
+            return;
+        }
+        
         aktWoodCount++;
-
-        if(aktWoodCount == 1)
-        {
+        if (aktWoodCount == 1) {
             fireBurning = true;
             fireTimerInSeconds = fireTimerSecondsPerWoodLog;
         }
