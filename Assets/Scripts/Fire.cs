@@ -45,7 +45,6 @@ public class Fire : MonoBehaviour
         if (fireTimerInSeconds < 0)
         {
             aktWoodCount--;
-            print(aktWoodCount);
             if (aktWoodCount == 0)
             {
                 fireBurning = false;
@@ -55,7 +54,6 @@ public class Fire : MonoBehaviour
                 fireTimerInSeconds = fireTimerSecondsPerWoodLog;
             }
         }
-        print(fireTimerInSeconds);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -76,7 +74,7 @@ public class Fire : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && fireBurning)
+        if (other.gameObject.CompareTag("Player") && !fireBurning)
         {
             other.GetComponent<PlayerTemperature>().warmingUp = false;
         }
