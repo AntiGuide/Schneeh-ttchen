@@ -5,8 +5,15 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour {
 
+    public HoldItems playerHolds;
+
     private int[] limits;
     private int[] itemCounts;
+
+    public enum HoldItems {
+        AXE,
+        HAMMER,
+    }
 
     public enum Items : int {
         FISH,
@@ -40,6 +47,10 @@ public class PlayerInventory : MonoBehaviour {
 
     public int ItemCount(Items itemToCheck) {
         return itemCounts[(int)itemToCheck];
+    }
+
+    public void PickUpHoldItem(HoldItems item) {
+        playerHolds = item;
     }
 
     private void Start() {
