@@ -53,5 +53,9 @@ public class PlayerTemperature : MonoBehaviour {
         }
 
         bodyTemperatureImage.fillAmount = aktTemperature / maxTemperature;
+
+        if (aktTemperature < float.Epsilon) {
+            PlayerHunger.Death();
+        }
 	}
 }
