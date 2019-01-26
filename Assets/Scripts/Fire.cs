@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Fire : MonoBehaviour
-{
+public class Fire : MonoBehaviour {
     [SerializeField]
     private float fireFadeModifierPerHole;
 

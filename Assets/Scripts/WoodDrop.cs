@@ -6,7 +6,7 @@ public class WoodDrop : MonoBehaviour, IInteractable {
     public WoodSpawner ParentSpawner;
     public float ChanceDoubleStack = 0.05f;
     public GameObject miniGame;
-
+    private PlayerMiniGameManager miniGameManager;
     private States state = States.RAW;
     private int stackCount;
     private bool isInMinigame;

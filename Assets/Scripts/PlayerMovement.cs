@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-
     [SerializeField] Rigidbody Rigidbody;
     [SerializeField] Transform Feet;
     [SerializeField] LayerMask Ground;
@@ -13,6 +12,15 @@ public class PlayerMovement : MonoBehaviour {
     public float GroundDistance = 0.2f;
 
     private Vector3 _Move;
+
+    public bool IsMoving
+    {
+        get
+        {
+            return _Move.magnitude > 0f;
+        }
+    }
+
     public bool _IsGrounded;
 
     // Use this for initialization

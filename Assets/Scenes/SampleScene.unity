@@ -5902,8 +5902,23 @@ Prefab:
     - target: {fileID: 114274045244500190, guid: 9330eeef4a17a244ab04e54eac7b64be,
         type: 2}
       propertyPath: standStillModifier
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114274045244500190, guid: 9330eeef4a17a244ab04e54eac7b64be,
+        type: 2}
+      propertyPath: temperatureLossSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114274045244500190, guid: 9330eeef4a17a244ab04e54eac7b64be,
+        type: 2}
+      propertyPath: miniGameManager
+      value: 
+      objectReference: {fileID: 1967612805}
+    - target: {fileID: 114274045244500190, guid: 9330eeef4a17a244ab04e54eac7b64be,
+        type: 2}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1967612801}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9330eeef4a17a244ab04e54eac7b64be, type: 2}
   m_IsPrefabAsset: 0
@@ -6647,8 +6662,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1794378820}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1967612797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1511932840414292, guid: 9330eeef4a17a244ab04e54eac7b64be,
+    type: 2}
+  m_PrefabInternal: {fileID: 1210673622}
+--- !u!114 &1967612801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114700703055517412, guid: 9330eeef4a17a244ab04e54eac7b64be,
+    type: 2}
+  m_PrefabInternal: {fileID: 1210673622}
+  m_Script: {fileID: 11500000, guid: 9013516aab2f15e47906e167538240c0, type: 3}
 --- !u!54 &1967612803 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 54616180067728562, guid: 9330eeef4a17a244ab04e54eac7b64be,
     type: 2}
   m_PrefabInternal: {fileID: 1210673622}
+--- !u!114 &1967612805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1967612797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b385b0ffa2eb409498b2ef834d0bf7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsInMiniGame: 0

@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 114934680263964828}
   - component: {fileID: 114274045244500190}
   - component: {fileID: 114013097095201328}
+  - component: {fileID: 114444718918212112}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -369,6 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hungerImage: {fileID: 0}
   hungerSpeed: 1
+  foodValue: 25
 --- !u!114 &114274045244500190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -382,8 +384,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyTemperatureImage: {fileID: 0}
   temperatureLossSpeed: 2
+  standStillModifier: 5
   warmUpSpeed: 1
+  playerMovement: {fileID: 114700703055517412}
+  miniGameManager: {fileID: 114444718918212112}
+  rb: {fileID: 54616180067728562}
   warmingUp: 0
+--- !u!114 &114444718918212112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1511932840414292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b385b0ffa2eb409498b2ef834d0bf7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsInMiniGame: 0
 --- !u!114 &114700703055517412
 MonoBehaviour:
   m_ObjectHideFlags: 1
