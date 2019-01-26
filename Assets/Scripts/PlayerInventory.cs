@@ -49,6 +49,10 @@ public class PlayerInventory : MonoBehaviour {
         return itemCounts[(int)itemToCheck];
     }
 
+    public bool CanAdd(Items itemToCheck) {
+        return limits[(int)itemToCheck] > itemCounts[(int)itemToCheck];
+    }
+
     public void PickUpHoldItem(HoldItems? item) {
         playerHolds = item;
     }
