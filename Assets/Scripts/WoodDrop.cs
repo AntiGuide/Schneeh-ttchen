@@ -5,9 +5,11 @@ using UnityEngine;
 public class WoodDrop : MonoBehaviour, IInteractable {
     public WoodSpawner ParentSpawner;
     public float ChanceDoubleStack = 0.05f;
+    public GameObject miniGame;
 
     private States state = States.RAW;
     private int stackCount;
+    private bool isInMinigame;
 
     private enum States {
         RAW,
@@ -19,9 +21,18 @@ public class WoodDrop : MonoBehaviour, IInteractable {
     }
 
     public void Interact(PlayerInventory playerInventory) {
+        if (isInMinigame) {
+            return;
+        }
+
         switch (state) {
             case States.RAW:
-                state = playerInventory.playerHolds == PlayerInventory.HoldItems.AXE ? States.PROCESSED : state;
+                if (playerInventory.playerHolds == PlayerInventory.HoldItems.AXE) {
+                    miniGame.SetActive(true);
+                    miniGame.GetComponent<IMiniGame>().StartGame(new Callback(MiniGame));
+                    isInMinigame = true;
+                    Debug.Log("Wood Minigame started");
+                }
                 break;
             case States.PROCESSED:
                 if (playerInventory.AddItem(PlayerInventory.Items.WOOD)) {
@@ -35,5 +46,14 @@ public class WoodDrop : MonoBehaviour, IInteractable {
             default:
                 break;
         }
+    }
+
+    public void MiniGame(bool won) {
+        if (won) {
+            state = States.PROCESSED;
+            Debug.Log("Wood processed (Minigame won)");
+        }
+        
+        isInMinigame = false;
     }
 }
