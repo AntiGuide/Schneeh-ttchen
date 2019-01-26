@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface IInteractable {
-    void Interact(PlayerInventory playerInventory);
+    void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager);
 }

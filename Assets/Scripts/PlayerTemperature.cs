@@ -11,7 +11,19 @@ public class PlayerTemperature : MonoBehaviour {
     private float temperatureLossSpeed;
 
     [SerializeField]
+    private float standStillModifier;
+
+    [SerializeField]
     private float warmUpSpeed = 1;
+
+    [SerializeField]
+    PlayerMovement playerMovement;
+
+    [SerializeField]
+    PlayerMiniGameManager miniGameManager;
+
+    [SerializeField]
+    private Rigidbody rb;
 
     [HideInInspector]
     public bool warmingUp;
@@ -27,11 +39,15 @@ public class PlayerTemperature : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!warmingUp)
+        if (!warmingUp && playerMovement.IsMoving || miniGameManager.IsInMiniGame && !warmingUp && playerMovement.IsMoving)
         {
             aktTemperature -= Time.deltaTime * temperatureLossSpeed;
         }
-        else
+        else if(!warmingUp && !playerMovement.IsMoving && !miniGameManager.IsInMiniGame)
+        {
+            aktTemperature -= Time.deltaTime * temperatureLossSpeed * standStillModifier;
+        }
+        else if(warmingUp)
         {
             aktTemperature += Time.deltaTime * warmUpSpeed;
         }
