@@ -40,7 +40,7 @@ public class CameraController : MonoBehaviour {
         float x = Mathf.Tan(fovRads) * z;
         float y = x / Camera.aspect;
 
-        z *= collisionZBias;
+        z -= collisionZBias;
         x *= collisionBias;
         y *= collisionBias;
 

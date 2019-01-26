@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 114013097095201328}
   - component: {fileID: 114444718918212112}
   m_Layer: 0
-  m_Name: Player1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rigidbody: {fileID: 54616180067728562}
-  Feet: {fileID: 4958427326046028}
+  Feet: {fileID: 0}
   Ground:
     serializedVersion: 2
     m_Bits: 256

@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     [SerializeField] Rigidbody Rigidbody;
-    [SerializeField] Transform Feet;
     [SerializeField] LayerMask Ground;
 
     public float Speed = 5f;
@@ -13,16 +12,14 @@ public class PlayerMovement : MonoBehaviour {
     public float GroundDistance = 0.2f;
 
     private Vector3 _Move;
-    public bool _IsGrounded;
 
-    // Use this for initialization
-    void Start () {
-       
+    public bool IsMoving
+    {
+        get { return this._Move.magnitude > 0; }
     }
 
     private void Update()
     {
-        this._IsGrounded = Physics.CheckSphere(Feet.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
 
         Vector3 forward = this.transform.forward;
         Vector3 right = this.transform.right;
@@ -33,11 +30,6 @@ public class PlayerMovement : MonoBehaviour {
         this._Move = Vector3.zero;
         this._Move += forward * Input.GetAxis("Vertical");
         this._Move += right * Input.GetAxis("Horizontal"); 
-
-        if (Input.GetButtonDown("Jump") && _IsGrounded)
-        {
-            Rigidbody.AddForce(Vector3.up * Mathf.Sqrt(JumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
-        }
 
     }
 
