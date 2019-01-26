@@ -65,6 +65,7 @@ public class WoodSpawner : MonoBehaviour {
         spawnedWood.Add(go);
         var woodDrop = go.GetComponent<WoodDrop>();
         woodDrop.ParentSpawner = this;
+        usedSlots++;
     }
 
     private IEnumerator InitSpawning() {
