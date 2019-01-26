@@ -27,9 +27,15 @@ public class SmoothMouseLook : MonoBehaviour
 
     Quaternion originalRotationX;
     Quaternion originalRotationY;
+    bool disable;
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+            disable = !disable;
+
+        if (disable)
+            return;
 
         rotAverageY = 0f;
         rotAverageX = 0f;
