@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class Fire : MonoBehaviour
 {
-    [SerializeField] private float fireFadeModifierPerHole;
+    [SerializeField]
+    private float fireFadeModifierPerHole;
 
-    [SerializeField] private GameObject hole;
+    [SerializeField]
+    private GameObject hole;
 
     [SerializeField]
     private int aktWoodCount = 2;
@@ -44,13 +46,13 @@ public class Fire : MonoBehaviour
 
         if (fireTimerInSeconds < 0)
         {
-            aktWoodCount--;
             if (aktWoodCount == 0)
             {
                 fireBurning = false;
             }
             else
             {
+                aktWoodCount--;
                 fireTimerInSeconds = fireTimerSecondsPerWoodLog;
             }
         }

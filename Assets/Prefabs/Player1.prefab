@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyTemperatureImage: {fileID: 0}
-  temperatureLossSpeed: 0
+  temperatureLossSpeed: 2
   warmUpSpeed: 1
   warmingUp: 0
 --- !u!114 &114700703055517412
@@ -400,7 +400,7 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 256
-  Speed: 0.5
+  Speed: 0.1
   JumpHeight: 2
   GroundDistance: 0.2
   _IsGrounded: 0

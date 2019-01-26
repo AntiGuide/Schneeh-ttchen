@@ -10,6 +10,9 @@ public class PlayerHunger : MonoBehaviour {
     [SerializeField]
     private float hungerSpeed = 1;
 
+    [SerializeField]
+    private float foodValue = 25;
+
     private float aktHunger;
 
     private float maxHunger = 100;
@@ -25,4 +28,9 @@ public class PlayerHunger : MonoBehaviour {
 
         hungerImage.fillAmount = aktHunger / maxHunger;
 	}
+
+    public void EatFood()
+    {
+        aktHunger += foodValue;
+    }
 }

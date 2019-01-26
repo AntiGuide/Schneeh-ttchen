@@ -11,7 +11,13 @@ public class PlayerTemperature : MonoBehaviour {
     private float temperatureLossSpeed;
 
     [SerializeField]
+    private float standStillModifier;
+
+    [SerializeField]
     private float warmUpSpeed = 1;
+
+    [SerializeField]
+    private Rigidbody rb;
 
     [HideInInspector]
     public bool warmingUp;
@@ -27,11 +33,15 @@ public class PlayerTemperature : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!warmingUp)
+        if (!warmingUp && rb.velocity.magnitude > 0)
         {
             aktTemperature -= Time.deltaTime * temperatureLossSpeed;
         }
-        else
+        else if(!warmingUp && rb.velocity.magnitude == 0f)
+        {
+            aktTemperature -= Time.deltaTime * temperatureLossSpeed * standStillModifier;
+        }
+        else if(warmingUp)
         {
             aktTemperature += Time.deltaTime * warmUpSpeed;
         }
