@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour {
 
-    public HoldItems playerHolds;
+    public HoldItems? playerHolds;
 
     private int[] limits;
     private int[] itemCounts;
@@ -49,7 +49,7 @@ public class PlayerInventory : MonoBehaviour {
         return itemCounts[(int)itemToCheck];
     }
 
-    public void PickUpHoldItem(HoldItems item) {
+    public void PickUpHoldItem(HoldItems? item) {
         playerHolds = item;
     }
 

@@ -20,7 +20,7 @@ public class WoodDrop : MonoBehaviour, IInteractable {
         stackCount = Random.value < ChanceDoubleStack ? 2 : 1;
     }
 
-    public void Interact(PlayerInventory playerInventory) {
+    public void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
         if (isInMinigame) {
             return;
         }
@@ -31,6 +31,7 @@ public class WoodDrop : MonoBehaviour, IInteractable {
                     miniGame.SetActive(true);
                     miniGame.GetComponent<IMiniGame>().StartGame(new Callback(MiniGame));
                     isInMinigame = true;
+                    miniGameManager.IsInMiniGame = isInMinigame;
                     Debug.Log("Wood Minigame started");
                 }
                 break;
@@ -55,5 +56,6 @@ public class WoodDrop : MonoBehaviour, IInteractable {
         }
         
         isInMinigame = false;
+        miniGameManager.IsInMiniGame = isInMinigame;
     }
 }
