@@ -3,24 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-
     [SerializeField] Rigidbody Rigidbody;
     [SerializeField] LayerMask Ground;
 
     public float Speed = 5f;
-    public float JumpHeight = 2f;
-    public float GroundDistance = 0.2f;
 
     private Vector3 _Move;
 
     public bool IsMoving
     {
-        get { return this._Move.magnitude > 0; }
+        get
+        {
+            return _Move.magnitude > 0f;
+        }
+    }
+
+    public bool _IsGrounded;
+
+    // Use this for initialization
+    void Start () {
+       
     }
 
     private void Update()
     {
-
         Vector3 forward = this.transform.forward;
         Vector3 right = this.transform.right;
 
@@ -29,8 +35,7 @@ public class PlayerMovement : MonoBehaviour {
 
         this._Move = Vector3.zero;
         this._Move += forward * Input.GetAxis("Vertical");
-        this._Move += right * Input.GetAxis("Horizontal"); 
-
+        this._Move += right * Input.GetAxis("Horizontal");       
     }
 
     // Update is called once per frame

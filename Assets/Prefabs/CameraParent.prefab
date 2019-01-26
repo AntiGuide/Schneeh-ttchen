@@ -9,18 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1729327593652778}
+  m_RootGameObject: {fileID: 1765179037540554}
   m_IsPrefabAsset: 1
---- !u!1 &1405173639037334
+--- !u!1 &1272715291938044
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4473766701352512}
-  - component: {fileID: 20340596140466124}
-  - component: {fileID: 81394808805518232}
+  - component: {fileID: 4378380200338482}
+  - component: {fileID: 20081562574325100}
+  - component: {fileID: 81296121470596876}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -28,55 +28,55 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1729327593652778
+--- !u!1 &1765179037540554
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4799472152571244}
-  - component: {fileID: 114468580237305502}
+  - component: {fileID: 4231351818625078}
+  - component: {fileID: 114824995870023798}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: CameraParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4473766701352512
+--- !u!4 &4231351818625078
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1405173639037334}
-  m_LocalRotation: {x: 0.07106222, y: 0, z: 0, w: 0.9974719}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4799472152571244}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 8.15, y: 0, z: 0}
---- !u!4 &4799472152571244
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729327593652778}
+  m_GameObject: {fileID: 1765179037540554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4473766701352512}
+  - {fileID: 4378380200338482}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &20340596140466124
+--- !u!4 &4378380200338482
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1272715291938044}
+  m_LocalRotation: {x: 0.07106222, y: 0, z: 0, w: 0.9974719}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4231351818625078}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 8.15, y: 0, z: 0}
+--- !u!20 &20081562574325100
 Camera:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1405173639037334}
+  m_GameObject: {fileID: 1272715291938044}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -111,19 +111,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &81394808805518232
+--- !u!81 &81296121470596876
 AudioListener:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1405173639037334}
+  m_GameObject: {fileID: 1272715291938044}
   m_Enabled: 1
---- !u!114 &114468580237305502
+--- !u!114 &114824995870023798
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729327593652778}
+  m_GameObject: {fileID: 1765179037540554}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7f644596c93dfe4bb2774135dae18f5, type: 3}
@@ -132,8 +132,8 @@ MonoBehaviour:
   positionTarget: {fileID: 0}
   xRotationTarget: {fileID: 0}
   yRotationTarget: {fileID: 0}
-  Camera: {fileID: 20340596140466124}
-  distance: 2.8000004
+  Camera: {fileID: 20081562574325100}
+  distance: 2
   scrollSpeed: 2
   minDistance: 1
   maxDistance: 5
@@ -142,4 +142,5 @@ MonoBehaviour:
   collisionTest:
     serializedVersion: 2
     m_Bits: 311
-  collisionBias: 3
+  collisionBias: 2
+  collisionZBias: 0.2
