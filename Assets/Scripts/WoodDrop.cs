@@ -26,15 +26,18 @@ public class WoodDrop : BaseInteractable {
             return;
         }
 
-        switch (state) {
+		this.miniGameManager = miniGameManager;
+		miniGame = miniGameManager.WoodCuttingUI;
+
+		switch (state) {
             case States.RAW:
-                if (playerInventory.playerHolds == PlayerInventory.HoldItems.AXE) {
+                //if (playerInventory.playerHolds == PlayerInventory.HoldItems.AXE) {
                     miniGame.SetActive(true);
                     miniGame.GetComponent<IMiniGame>().StartGame(new Callback(MiniGame));
                     isInMinigame = true;
                     miniGameManager.IsInMiniGame = isInMinigame;
-                    Debug.Log("Wood Minigame started");
-                }
+					Debug.Log("Wood Minigame started");
+                //}
                 break;
             case States.PROCESSED:
                 if (playerInventory.AddItem(PlayerInventory.Items.WOOD)) {
@@ -57,6 +60,7 @@ public class WoodDrop : BaseInteractable {
         }
         
         isInMinigame = false;
-        miniGameManager.IsInMiniGame = isInMinigame;
+		miniGameManager.WoodCuttingUI.SetActive(false);
+		miniGameManager.IsInMiniGame = isInMinigame;
     }
 }

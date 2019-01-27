@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Fire : BaseInteractable {
+    [SerializeField] FireZone firezone;
+
     [SerializeField]
     private float fireFadeModifierPerHole;
 
@@ -12,8 +14,6 @@ public class Fire : BaseInteractable {
 
     [SerializeField]
     private int fireTimerSecondsPerWoodLog = 30;
-
-    private bool fireBurning = true;
 
     private float fireTimerInSeconds = 60f;
 
@@ -28,7 +28,7 @@ public class Fire : BaseInteractable {
     // Update is called once per frame
     void Update()
     {
-        if (fireBurning)
+        if (firezone.fireBurning)
         {
             if (holes.Length == 0)
             {
@@ -44,7 +44,7 @@ public class Fire : BaseInteractable {
         {
             if (aktWoodCount == 0)
             {
-                fireBurning = false;
+                firezone.fireBurning = false;
             }
             else
             {
@@ -53,37 +53,12 @@ public class Fire : BaseInteractable {
             }
         }
 
-        if (!fireBurning && aktWoodCount > 0)
-            fireBurning = true;
+        if (!firezone.fireBurning && aktWoodCount > 0)
+            firezone.fireBurning = true;
       
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player") && fireBurning)
-        {
-            other.GetComponent<PlayerTemperature>().warmingUp = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            other.GetComponent<PlayerTemperature>().warmingUp = false;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            if (fireBurning)
-                other.GetComponent<PlayerTemperature>().warmingUp = true;
-            else
-                other.GetComponent<PlayerTemperature>().warmingUp = false;
-        }       
-    }
+  
 
     public override void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
         if (!playerInventory.RemoveItem(PlayerInventory.Items.WOOD)) {
@@ -92,7 +67,7 @@ public class Fire : BaseInteractable {
         
         aktWoodCount++;
         if (aktWoodCount == 1) {
-            fireBurning = true;
+            firezone.fireBurning = true;
             fireTimerInSeconds = fireTimerSecondsPerWoodLog;
         }
     }

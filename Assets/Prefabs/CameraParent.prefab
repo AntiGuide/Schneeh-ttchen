@@ -50,9 +50,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1765179037540554}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 117.44803, y: 23.57277, z: 195.74982}
+  m_LocalScale: {x: 0.40000024, y: 0.4, z: 0.40000024}
   m_Children:
   - {fileID: 4378380200338482}
   m_Father: {fileID: 0}
@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272715291938044}
   m_LocalRotation: {x: 0.07106222, y: 0, z: 0, w: 0.9974719}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4231351818625078}
@@ -133,14 +133,14 @@ MonoBehaviour:
   xRotationTarget: {fileID: 0}
   yRotationTarget: {fileID: 0}
   Camera: {fileID: 20081562574325100}
-  distance: 2
-  scrollSpeed: 2
-  minDistance: 1
-  maxDistance: 5
+  distance: 5
+  scrollSpeed: 3
+  minDistance: 2
+  maxDistance: 8
   rotationSmoothSpeed: 6
   distanceSmoothSpeed: 3
   collisionTest:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 1335
   collisionBias: 2
   collisionZBias: 0.2
