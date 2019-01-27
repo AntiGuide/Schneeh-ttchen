@@ -93,10 +93,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1448456294075134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9b20f4189779214fb0666db62cf9577, type: 3}
+  m_Script: {fileID: 11500000, guid: fe18485efe8ee4942b115e7df09a5840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodPrefab: {fileID: 1626983330823594, guid: 877dd2bd914d8d242ad910140fd78944, type: 2}
+  woodPrefab: {fileID: 1618574142880458, guid: 318cd2193319a714dadde2ef7883ce26, type: 2}
   SecondsSpawn: 3
   Slots: 3
   SpawnRadius: 10

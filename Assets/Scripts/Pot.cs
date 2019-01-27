@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Pot : MonoBehaviour, IInteractable {
+public class Pot : BaseInteractable {
     public float cookingTimeStart;
     public Image cookingBarBackground;
     public Image cookingBarContent;
@@ -12,7 +12,7 @@ public class Pot : MonoBehaviour, IInteractable {
     private bool cooking;
     private float cookingTime;
 
-    public void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
+    public override void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
         if (charges > 0) {
             var hunger = playerInventory.gameObject.GetComponent<PlayerHunger>();
             hunger.EatFood();

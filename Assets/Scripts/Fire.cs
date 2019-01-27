@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Fire : MonoBehaviour, IInteractable {
+public class Fire : BaseInteractable {
     [SerializeField]
     private float fireFadeModifierPerHole;
-
-    [SerializeField]
-    private GameObject hole;
 
     [SerializeField]
     private int aktWoodCount = 2;
@@ -55,6 +52,10 @@ public class Fire : MonoBehaviour, IInteractable {
                 fireTimerInSeconds = fireTimerSecondsPerWoodLog;
             }
         }
+
+        if (!fireBurning && aktWoodCount > 0)
+            fireBurning = true;
+      
     }
 
     private void OnTriggerEnter(Collider other)
@@ -75,13 +76,16 @@ public class Fire : MonoBehaviour, IInteractable {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && !fireBurning)
+        if (other.gameObject.CompareTag("Player"))
         {
-            other.GetComponent<PlayerTemperature>().warmingUp = false;
-        }
+            if (fireBurning)
+                other.GetComponent<PlayerTemperature>().warmingUp = true;
+            else
+                other.GetComponent<PlayerTemperature>().warmingUp = false;
+        }       
     }
 
-    public void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
+    public override void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
         if (!playerInventory.RemoveItem(PlayerInventory.Items.WOOD)) {
             return;
         }

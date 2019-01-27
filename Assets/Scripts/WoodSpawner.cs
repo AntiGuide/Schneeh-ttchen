@@ -60,8 +60,8 @@ public class WoodSpawner : MonoBehaviour {
                 }
             }
         } while (!freeSpace);
-
-        var go = Instantiate(woodPrefab, new Vector3(pos.x, 0f, pos.y), Quaternion.identity, transform);
+       
+        var go = Instantiate(woodPrefab, this.transform.position + new Vector3(pos.x, 0, pos.y), Quaternion.identity, transform);
         spawnedWood.Add(go);
         var woodDrop = go.GetComponent<WoodDrop>();
         woodDrop.ParentSpawner = this;

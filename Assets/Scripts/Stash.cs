@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stash : MonoBehaviour, IInteractable {
+public class Stash : BaseInteractable {
     public PlayerInventory.Items stashType;
 
     private int stashCount;
 
-    public void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
+    public override void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
         if (playerInventory.RemoveItem(stashType)) {
             stashCount++;
         } else if (stashCount > 0) {

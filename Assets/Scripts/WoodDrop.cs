@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodDrop : MonoBehaviour, IInteractable {
+public class WoodDrop : BaseInteractable {
     public WoodSpawner ParentSpawner;
     public float ChanceDoubleStack = 0.05f;
     public GameObject miniGame;
@@ -20,7 +20,8 @@ public class WoodDrop : MonoBehaviour, IInteractable {
         stackCount = Random.value < ChanceDoubleStack ? 2 : 1;
     }
 
-    public void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
+    public override void Interact(PlayerInventory playerInventory, PlayerMiniGameManager miniGameManager) {
+
         if (isInMinigame) {
             return;
         }

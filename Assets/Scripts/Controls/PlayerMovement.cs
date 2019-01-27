@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     [SerializeField] Rigidbody Rigidbody;
-    [SerializeField] LayerMask Ground;
-
     public float Speed = 5f;
 
     private Vector3 _Move;
@@ -16,14 +14,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             return _Move.magnitude > 0f;
         }
-    }
-
-    public bool _IsGrounded;
-
-    // Use this for initialization
-    void Start () {
-       
-    }
+    }    
 
     private void Update()
     {
