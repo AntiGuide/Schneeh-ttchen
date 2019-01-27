@@ -28,6 +28,16 @@ ModelImporter:
     100044: Tuer
     100046: Tuer7
     100048: Verkleidung
+    100050: Dachgeschoss
+    100052: FensterBretter
+    100054: FensterRundBretter
+    100056: Schornstein
+    100058: Verkleidung_Front
+    100060: Verkleidung_H
+    100062: Verkleidung_L1
+    100064: Verkleidung_L2
+    100066: Verkleidung_RF
+    100068: Verkleidung_RH
     400000: Dach
     400002: Fenster
     400004: Front
@@ -53,9 +63,33 @@ ModelImporter:
     400044: Tuer
     400046: Tuer7
     400048: Verkleidung
+    400050: Dachgeschoss
+    400052: FensterBretter
+    400054: FensterRundBretter
+    400056: Schornstein
+    400058: Verkleidung_Front
+    400060: Verkleidung_H
+    400062: Verkleidung_L1
+    400064: Verkleidung_L2
+    400066: Verkleidung_RF
+    400068: Verkleidung_RH
     2100000: blinn1
     2100002: phong1
     2100004: lambert1
+    2100006: Verkleidung_RF1
+    2100008: Verkleidung_LF
+    2100010: Verkleidung_LH
+    2100012: Verkleidung_RH1
+    2100014: Verkleidung_Fenster1
+    2100016: Dachgeschoss1
+    2100018: Verkleidung_FensterRund
+    2100020: Verkleidung_H1
+    2100022: Verkleidung_F
+    2100024: Geruest1
+    2100026: Fenster1
+    2100028: Dach1
+    2100030: Tuer7
+    2100032: Schornstein1
     2300000: Dach
     2300002: Fenster
     2300004: Front
@@ -76,6 +110,17 @@ ModelImporter:
     2300034: polySurface8
     2300036: polySurface9
     2300038: Tuer7
+    2300040: Dachgeschoss
+    2300042: FensterBretter
+    2300044: FensterRundBretter
+    2300046: Schornstein
+    2300048: Tuer
+    2300050: Verkleidung_Front
+    2300052: Verkleidung_H
+    2300054: Verkleidung_L1
+    2300056: Verkleidung_L2
+    2300058: Verkleidung_RF
+    2300060: Verkleidung_RH
     3300000: Dach
     3300002: Fenster
     3300004: Front
@@ -96,6 +141,17 @@ ModelImporter:
     3300034: polySurface8
     3300036: polySurface9
     3300038: Tuer7
+    3300040: Dachgeschoss
+    3300042: FensterBretter
+    3300044: FensterRundBretter
+    3300046: Schornstein
+    3300048: Tuer
+    3300050: Verkleidung_Front
+    3300052: Verkleidung_H
+    3300054: Verkleidung_L1
+    3300056: Verkleidung_L2
+    3300058: Verkleidung_RF
+    3300060: Verkleidung_RH
     4300000: pCube31
     4300002: pCube29
     4300004: pCube30
@@ -116,6 +172,17 @@ ModelImporter:
     4300034: Fenster
     4300036: Dach
     4300038: Tuer7
+    4300040: Verkleidung_RF
+    4300042: Verkleidung_L1
+    4300044: Verkleidung_L2
+    4300046: Verkleidung_RH
+    4300048: FensterBretter
+    4300050: Dachgeschoss
+    4300052: FensterRundBretter
+    4300054: Verkleidung_H
+    4300056: Verkleidung_Front
+    4300058: Tuer
+    4300060: Schornstein
   externalObjects: {}
   materials:
     importMaterials: 1
